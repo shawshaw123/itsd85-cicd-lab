@@ -4,7 +4,7 @@ export const app = express();
 const version = process.env.APP_VERSION || "dev";
 
 export function add(a, b) {
-  return a - b;
+  return a + b;
 }
 
 app.get("/", (req, res) => {
