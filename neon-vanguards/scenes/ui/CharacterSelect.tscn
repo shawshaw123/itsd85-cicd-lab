@@ -1,0 +1,367 @@
+[gd_scene load_steps=6 format=3 uid="uid://charsel0001"]
+
+[ext_resource type="Script" path="res://scenes/ui/CharacterSelect.gd" id="1_charselscript"]
+[ext_resource type="Texture2D" uid="uid://bgjungle0001" path="res://assets/art/bg_jungle.svg" id="2_bgjungle"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_card"]
+bg_color = Color(0.03, 0.07, 0.05, 0.88)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.2, 0.85, 0.5, 0.75)
+corner_radius_top_left = 18
+corner_radius_top_right = 18
+corner_radius_bottom_right = 18
+corner_radius_bottom_left = 18
+shadow_color = Color(0, 0, 0, 0.6)
+shadow_size = 18
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_btn_back"]
+draw_center = false
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.35, 0.65, 0.95, 0.7)
+corner_radius_top_left = 24
+corner_radius_top_right = 24
+corner_radius_bottom_right = 24
+corner_radius_bottom_left = 24
+shadow_color = Color(0, 0, 0, 0.4)
+shadow_size = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_btn_deploy"]
+draw_center = false
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.2, 0.85, 0.5, 0.9)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_btn_select"]
+draw_center = false
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.25, 0.75, 1.0, 0.9)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tab"]
+draw_center = false
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.3, 0.6, 0.9, 0.6)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[node name="CharacterSelect" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_charselscript")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_bgjungle")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="DarkOverlay" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.02, 0.08, 0.05, 0.35)
+
+[node name="AmbientParticles" type="CPUParticles2D" parent="."]
+position = Vector2(640, 720)
+amount = 25
+lifetime = 6.0
+emission_shape = 3
+emission_rect_extents = Vector2(640, 10)
+direction = Vector2(0, -1)
+spread = 20.0
+gravity = Vector2(0, -12)
+initial_velocity_min = 25.0
+initial_velocity_max = 55.0
+scale_amount_min = 2.0
+scale_amount_max = 4.0
+color = Color(0.4, 0.95, 0.3, 0.6)
+
+[node name="HeaderLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -300.0
+offset_top = 20.0
+offset_right = 300.0
+offset_bottom = 70.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 36
+text = "ARMORY & LOADOUT"
+horizontal_alignment = 1
+
+[node name="TopTabs" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -220.0
+offset_top = 75.0
+offset_right = 220.0
+offset_bottom = 125.0
+grow_horizontal = 2
+theme_override_constants/separation = 20
+
+[node name="OperatorTab" type="Button" parent="TopTabs"]
+custom_minimum_size = Vector2(200, 48)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.85, 0.95, 1, 1)
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_tab")
+text = "OPERATORS (5)"
+
+[node name="WeaponTab" type="Button" parent="TopTabs"]
+custom_minimum_size = Vector2(200, 48)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.85, 0.95, 1, 1)
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_tab")
+text = "WEAPONS (4)"
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -320.0
+offset_top = -185.0
+offset_right = 320.0
+offset_bottom = 155.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_card")
+
+[node name="PreviewTexture" type="TextureRect" parent="Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -280.0
+offset_top = -115.0
+offset_right = -70.0
+offset_bottom = 95.0
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="NameLabel" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 270.0
+offset_top = 32.0
+offset_right = 600.0
+offset_bottom = 70.0
+theme_override_font_sizes/font_size = 30
+text = "Mark"
+
+[node name="TitleLabel" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 270.0
+offset_top = 70.0
+offset_right = 600.0
+offset_bottom = 98.0
+theme_override_colors/font_color = Color(0.25, 0.85, 1, 1)
+theme_override_font_sizes/font_size = 18
+text = "All-Round Commando"
+
+[node name="DescLabel" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 270.0
+offset_top = 104.0
+offset_right = 600.0
+offset_bottom = 180.0
+theme_override_colors/font_color = Color(0.8, 0.88, 0.92, 0.85)
+theme_override_font_sizes/font_size = 15
+text = "Balanced health, speed, and standard military combat kit."
+autowrap_mode = 2
+
+[node name="StatsGrid" type="GridContainer" parent="Panel"]
+layout_mode = 0
+offset_left = 270.0
+offset_top = 195.0
+offset_right = 605.0
+offset_bottom = 270.0
+theme_override_constants/h_separation = 12
+theme_override_constants/v_separation = 10
+columns = 4
+
+[node name="Stat1Header" type="Label" parent="Panel/StatsGrid"]
+custom_minimum_size = Vector2(76, 24)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.65, 0.78, 0.88, 0.95)
+theme_override_font_sizes/font_size = 14
+text = "HEALTH:"
+vertical_alignment = 1
+
+[node name="Stat1Value" type="Label" parent="Panel/StatsGrid"]
+custom_minimum_size = Vector2(70, 24)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.25, 0.95, 0.45, 1)
+theme_override_font_sizes/font_size = 16
+text = "100 HP"
+vertical_alignment = 1
+
+[node name="Stat2Header" type="Label" parent="Panel/StatsGrid"]
+custom_minimum_size = Vector2(80, 24)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.65, 0.78, 0.88, 0.95)
+theme_override_font_sizes/font_size = 14
+text = "AGILITY:"
+vertical_alignment = 1
+
+[node name="Stat2Value" type="Label" parent="Panel/StatsGrid"]
+custom_minimum_size = Vector2(90, 24)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.3, 0.85, 1, 1)
+theme_override_font_sizes/font_size = 16
+text = "300"
+vertical_alignment = 1
+
+[node name="Stat3Header" type="Label" parent="Panel/StatsGrid"]
+custom_minimum_size = Vector2(76, 24)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.65, 0.78, 0.88, 0.95)
+theme_override_font_sizes/font_size = 14
+text = "JETPACK:"
+vertical_alignment = 1
+
+[node name="Stat3Value" type="Label" parent="Panel/StatsGrid"]
+custom_minimum_size = Vector2(70, 24)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.78, 0.2, 1)
+theme_override_font_sizes/font_size = 16
+text = "100 FUEL"
+vertical_alignment = 1
+
+[node name="Stat4Header" type="Label" parent="Panel/StatsGrid"]
+custom_minimum_size = Vector2(80, 24)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.65, 0.78, 0.88, 0.95)
+theme_override_font_sizes/font_size = 14
+text = "TRIGGER:"
+vertical_alignment = 1
+
+[node name="Stat4Value" type="Label" parent="Panel/StatsGrid"]
+custom_minimum_size = Vector2(90, 24)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.95, 0.95, 1, 1)
+theme_override_font_sizes/font_size = 16
+text = "NORMAL"
+vertical_alignment = 1
+
+[node name="PrevButton" type="Button" parent="."]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 180.0
+offset_top = -40.0
+offset_right = 260.0
+offset_bottom = 40.0
+grow_vertical = 2
+theme_override_font_sizes/font_size = 32
+text = "<"
+
+[node name="NextButton" type="Button" parent="."]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -260.0
+offset_top = -40.0
+offset_right = -180.0
+offset_bottom = 40.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_font_sizes/font_size = 32
+text = ">"
+
+[node name="SelectButton" type="Button" parent="."]
+custom_minimum_size = Vector2(300, 60)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -150.0
+offset_top = -120.0
+offset_right = 150.0
+offset_bottom = -60.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.35, 0.85, 1, 1)
+theme_override_font_sizes/font_size = 22
+theme_override_styles/normal = SubResource("StyleBoxFlat_btn_select")
+text = "EQUIP OPERATOR"
+
+[node name="BackButton" type="Button" parent="."]
+custom_minimum_size = Vector2(130, 48)
+layout_mode = 1
+offset_left = 32.0
+offset_top = 24.0
+offset_right = 162.0
+offset_bottom = 72.0
+theme_override_colors/font_color = Color(0.8, 0.9, 1, 1)
+theme_override_font_sizes/font_size = 18
+theme_override_styles/normal = SubResource("StyleBoxFlat_btn_back")
+text = "BACK"
+
+[node name="DeployButton" type="Button" parent="."]
+custom_minimum_size = Vector2(240, 56)
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -280.0
+offset_top = 40.0
+offset_right = -40.0
+offset_bottom = 96.0
+grow_horizontal = 0
+theme_override_colors/font_color = Color(0.3, 0.95, 0.65, 1)
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_btn_deploy")
+text = "PLAY MISSIONS"

@@ -1,0 +1,16 @@
+<svg width="76" height="32" viewBox="0 0 76 32" xmlns="http://www.w3.org/2000/svg">
+  <!-- Sniper Stock -->
+  <polygon points="2,12 18,10 18,20 2,18" fill="#1e293b" stroke="#0f172a" stroke-width="2"/>
+  <!-- Receiver -->
+  <rect x="18" y="8" width="26" height="12" rx="2" fill="#0f172a" stroke="#0284c7" stroke-width="1.5"/>
+  <!-- Long Rail Barrel -->
+  <rect x="42" y="11" width="30" height="5" rx="1.5" fill="#38bdf8" stroke="#0284c7" stroke-width="1.5"/>
+  <!-- High-Power Scope -->
+  <rect x="22" y="2" width="22" height="6" rx="2" fill="#0284c7" stroke="#0f172a" stroke-width="1.5"/>
+  <circle cx="42" cy="5" r="3" fill="#38bdf8"/>
+  <circle cx="24" cy="5" r="3" fill="#38bdf8"/>
+  <!-- Grip / Hand -->
+  <polygon points="16,18 22,18 18,28 13,28" fill="#0f172a"/>
+  <ellipse cx="18" cy="21" rx="4" ry="4" fill="#fed7aa" stroke="#ea580c" stroke-width="1.5"/>
+</svg>
+

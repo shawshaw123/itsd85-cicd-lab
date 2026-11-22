@@ -1,0 +1,39 @@
+<svg width="128" height="128" viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg">
+  <!-- Dual Rocket Thrusters -->
+  <rect x="18" y="42" width="24" height="46" rx="8" fill="#ea580c" stroke="#9a3412" stroke-width="3"/>
+  <rect x="22" y="80" width="16" height="18" rx="4" fill="#fbbf24"/>
+  <ellipse cx="30" cy="104" rx="10" ry="16" fill="#ef4444" opacity="0.95"/>
+  <ellipse cx="30" cy="98" rx="6" ry="10" fill="#fef08a"/>
+
+  <!-- Flight Suit (Crimson & Fiery Orange) -->
+  <rect x="42" y="52" width="46" height="42" rx="14" fill="#c2410c" stroke="#7c2d12" stroke-width="3"/>
+  <rect x="48" y="58" width="34" height="20" rx="6" fill="#ea580c"/>
+  <!-- Winged flight badge -->
+  <polygon points="56,66 65,60 74,66 65,72" fill="#fde047"/>
+
+  <!-- Pilot Head & Red Headband -->
+  <circle cx="68" cy="38" r="28" fill="#fed7aa" stroke="#ea580c" stroke-width="2"/>
+  <!-- Spiky brown pilot hair -->
+  <path d="M 42 32 Q 54 12 68 18 Q 82 12 94 32 Z" fill="#78350f"/>
+  <!-- Red Bandana -->
+  <rect x="40" y="26" width="56" height="8" rx="3" fill="#dc2626"/>
+  <circle cx="94" cy="32" r="4" fill="#dc2626"/>
+
+  <!-- Aviator Sunglasses / Goggles -->
+  <ellipse cx="62" cy="38" rx="10" ry="8" fill="#18181b" stroke="#f59e0b" stroke-width="2"/>
+  <ellipse cx="80" cy="38" rx="10" ry="8" fill="#18181b" stroke="#f59e0b" stroke-width="2"/>
+  <line x1="72" y1="38" x2="70" y2="38" stroke="#f59e0b" stroke-width="2"/>
+  <!-- Lens shine -->
+  <line x1="56" y1="34" x2="62" y2="40" stroke="#fef08a" stroke-width="1.8"/>
+  <line x1="74" y1="34" x2="80" y2="40" stroke="#fef08a" stroke-width="1.8"/>
+
+  <!-- Smirking mouth -->
+  <path d="M 66 50 Q 76 56 82 48" stroke="#9a3412" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+
+  <!-- Flight Boots -->
+  <rect x="46" y="94" width="16" height="20" rx="6" fill="#7c2d12"/>
+  <rect x="68" y="94" width="16" height="20" rx="6" fill="#7c2d12"/>
+  <ellipse cx="54" cy="114" rx="10" ry="6" fill="#431407"/>
+  <ellipse cx="76" cy="114" rx="10" ry="6" fill="#431407"/>
+</svg>
+

@@ -1,0 +1,151 @@
+[gd_scene load_steps=8 format=3 uid="uid://mparena00001"]
+
+[ext_resource type="Script" path="res://scripts/MultiplayerArena.gd" id="1_arenascript"]
+[ext_resource type="Texture2D" uid="uid://bgcyber00001" path="res://assets/art/bg_cybercity.svg" id="2_bg"]
+[ext_resource type="PackedScene" path="res://scenes/ui/HUD.tscn" id="3_hud"]
+[ext_resource type="PackedScene" path="res://scenes/actors/PlatformCyber.tscn" id="4_plat"]
+[ext_resource type="PackedScene" path="res://scenes/actors/Player.tscn" id="5_player"]
+[ext_resource type="PackedScene" path="res://scenes/actors/HealthPickup.tscn" id="6_hp"]
+[ext_resource type="PackedScene" path="res://scenes/actors/WeaponPickup.tscn" id="7_wp"]
+
+[node name="MultiplayerArena" type="Node2D"]
+script = ExtResource("1_arenascript")
+frag_limit = 5
+
+[node name="Background" type="TextureRect" parent="."]
+offset_right = 2560.0
+offset_bottom = 1200.0
+texture = ExtResource("2_bg")
+expand_mode = 1
+stretch_mode = 1
+
+[node name="AmbientParticles" type="CPUParticles2D" parent="."]
+position = Vector2(1280, 1180)
+amount = 60
+lifetime = 6.0
+emission_shape = 3
+emission_rect_extents = Vector2(1280, 10)
+direction = Vector2(0, -1)
+spread = 20.0
+gravity = Vector2(0, -15)
+initial_velocity_min = 35.0
+initial_velocity_max = 85.0
+scale_amount_min = 2.5
+scale_amount_max = 5.5
+color = Color(0.2, 0.85, 1, 0.6)
+
+[node name="Bounds" type="StaticBody2D" parent="."]
+
+[node name="Floor" type="CollisionPolygon2D" parent="Bounds"]
+polygon = PackedVector2Array(0, 1140, 2560, 1140, 2560, 1200, 0, 1200)
+
+[node name="FloorVisual" type="ColorRect" parent="Bounds"]
+offset_top = 1140.0
+offset_right = 2560.0
+offset_bottom = 1200.0
+color = Color(0.06, 0.03, 0.14, 1)
+
+[node name="FloorGrate" type="ColorRect" parent="Bounds"]
+offset_top = 1138.0
+offset_right = 2560.0
+offset_bottom = 1146.0
+color = Color(0.15, 0.1, 0.28, 1)
+
+[node name="NeonFloorTrim" type="ColorRect" parent="Bounds"]
+offset_top = 1135.0
+offset_right = 2560.0
+offset_bottom = 1139.0
+color = Color(0.98, 0.2, 0.7, 1)
+
+[node name="Ceiling" type="CollisionPolygon2D" parent="Bounds"]
+polygon = PackedVector2Array(0, 0, 2560, 0, 2560, 20, 0, 20)
+
+[node name="CeilingTrim" type="ColorRect" parent="Bounds"]
+offset_right = 2560.0
+offset_bottom = 6.0
+color = Color(0.12, 0.85, 1, 0.8)
+
+[node name="LeftWall" type="CollisionPolygon2D" parent="Bounds"]
+polygon = PackedVector2Array(0, 0, 20, 0, 20, 1200, 0, 1200)
+
+[node name="LeftTrim" type="ColorRect" parent="Bounds"]
+offset_right = 6.0
+offset_bottom = 1200.0
+color = Color(0.98, 0.2, 0.7, 0.8)
+
+[node name="RightWall" type="CollisionPolygon2D" parent="Bounds"]
+polygon = PackedVector2Array(2540, 0, 2560, 0, 2560, 1200, 2540, 1200)
+
+[node name="RightTrim" type="ColorRect" parent="Bounds"]
+offset_left = 2554.0
+offset_right = 2560.0
+offset_bottom = 1200.0
+color = Color(0.98, 0.2, 0.7, 0.8)
+
+[node name="ArenaSignCenter" type="Label" parent="."]
+offset_left = 1030.0
+offset_top = 28.0
+offset_right = 1530.0
+offset_bottom = 56.0
+theme_override_colors/font_color = Color(0.2, 0.85, 1, 0.5)
+theme_override_font_sizes/font_size = 14
+text = "// CYBER ARENA SECTOR 07 - EXPANDED BATTLEGROUND //"
+horizontal_alignment = 1
+
+[node name="Platform1" parent="." instance=ExtResource("4_plat")]
+position = Vector2(450, 920)
+
+[node name="Platform2" parent="." instance=ExtResource("4_plat")]
+position = Vector2(2110, 920)
+
+[node name="Platform3" parent="." instance=ExtResource("4_plat")]
+position = Vector2(950, 820)
+
+[node name="Platform4" parent="." instance=ExtResource("4_plat")]
+position = Vector2(1610, 820)
+
+[node name="Platform5" parent="." instance=ExtResource("4_plat")]
+position = Vector2(1280, 620)
+
+[node name="Platform6" parent="." instance=ExtResource("4_plat")]
+position = Vector2(600, 560)
+
+[node name="Platform7" parent="." instance=ExtResource("4_plat")]
+position = Vector2(1960, 560)
+
+[node name="Platform8" parent="." instance=ExtResource("4_plat")]
+position = Vector2(350, 320)
+
+[node name="Platform9" parent="." instance=ExtResource("4_plat")]
+position = Vector2(1280, 320)
+
+[node name="Platform10" parent="." instance=ExtResource("4_plat")]
+position = Vector2(2210, 320)
+
+[node name="HealthPickup1" parent="." instance=ExtResource("6_hp")]
+position = Vector2(450, 880)
+
+[node name="HealthPickup2" parent="." instance=ExtResource("6_hp")]
+position = Vector2(2110, 880)
+
+[node name="HealthPickup3" parent="." instance=ExtResource("6_hp")]
+position = Vector2(1280, 280)
+
+[node name="HealthPickup4" parent="." instance=ExtResource("6_hp")]
+position = Vector2(1280, 1100)
+
+[node name="Pickups" type="Node2D" parent="."]
+
+[node name="InitialWeapon" parent="Pickups" instance=ExtResource("7_wp")]
+position = Vector2(1280, 570)
+weapon_type = "shotgun"
+
+[node name="Players" type="Node2D" parent="."]
+
+[node name="Enemies" type="Node2D" parent="."]
+
+[node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="."]
+_spawnable_scenes = PackedStringArray("res://scenes/actors/Player.tscn")
+spawn_path = NodePath("../Players")
+
+[node name="HUD" parent="." instance=ExtResource("3_hud")]

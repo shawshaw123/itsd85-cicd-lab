@@ -1,0 +1,121 @@
+[gd_scene load_steps=6 format=3 uid="uid://player000001"]
+
+[ext_resource type="Script" path="res://scripts/Player.gd" id="1_playerscript"]
+[ext_resource type="Texture2D" uid="uid://soldierp001" path="res://assets/art/char_mark.svg" id="2_playersprite"]
+[ext_resource type="Texture2D" uid="uid://gunrif00001" path="res://assets/art/gun_rifle.svg" id="3_gunsprite"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1"]
+radius = 18.0
+height = 54.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mini_bg"]
+bg_color = Color(0.08, 0.08, 0.12, 0.75)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mini_hp"]
+bg_color = Color(0.15, 0.85, 0.4, 0.9)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_1"]
+properties/0/path = NodePath(".:position")
+properties/0/spawn = true
+properties/0/replication_mode = 1
+properties/1/path = NodePath(".:velocity")
+properties/1/spawn = true
+properties/1/replication_mode = 1
+properties/2/path = NodePath(".:aim_angle")
+properties/2/spawn = true
+properties/2/replication_mode = 1
+properties/3/path = NodePath(".:current_health")
+properties/3/spawn = true
+properties/3/replication_mode = 1
+properties/4/path = NodePath(".:is_flying")
+properties/4/spawn = true
+properties/4/replication_mode = 1
+properties/5/path = NodePath(".:character_id")
+properties/5/spawn = true
+properties/5/replication_mode = 2
+properties/6/path = NodePath(".:weapon_id")
+properties/6/spawn = true
+properties/6/replication_mode = 2
+properties/7/path = NodePath(".:is_invulnerable")
+properties/7/spawn = true
+properties/7/replication_mode = 1
+
+[node name="Player" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 1
+script = ExtResource("1_playerscript")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -4)
+shape = SubResource("CapsuleShape2D_1")
+
+[node name="BodySprite" type="Sprite2D" parent="."]
+position = Vector2(0, -4)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_playersprite")
+
+[node name="Gun" type="Node2D" parent="."]
+position = Vector2(0, -2)
+
+[node name="GunSprite" type="Sprite2D" parent="Gun"]
+position = Vector2(22, 2)
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("3_gunsprite")
+
+[node name="Muzzle" type="Marker2D" parent="Gun"]
+position = Vector2(44, 2)
+
+[node name="ThrusterParticles" type="CPUParticles2D" parent="."]
+position = Vector2(-16, 16)
+emitting = false
+amount = 20
+lifetime = 0.35
+direction = Vector2(0, 1)
+spread = 25.0
+gravity = Vector2(0, 80)
+initial_velocity_min = 100.0
+initial_velocity_max = 160.0
+scale_amount_min = 3.0
+scale_amount_max = 6.0
+color = Color(1, 0.55, 0.1, 0.95)
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
+replication_config = SubResource("SceneReplicationConfig_1")
+
+[node name="Overhead" type="Node2D" parent="."]
+position = Vector2(0, -38)
+
+[node name="NameTag" type="Label" parent="Overhead"]
+offset_left = -80.0
+offset_top = -22.0
+offset_right = 80.0
+offset_bottom = -2.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/font_size = 12
+text = "PLAYER"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MiniHPBar" type="ProgressBar" parent="Overhead"]
+offset_left = -22.0
+offset_top = -2.0
+offset_right = 22.0
+offset_bottom = 4.0
+theme_override_styles/background = SubResource("StyleBoxFlat_mini_bg")
+theme_override_styles/fill = SubResource("StyleBoxFlat_mini_hp")
+value = 100.0
+show_percentage = false
+
+[node name="Camera2D" type="Camera2D" parent="."]
+enabled = false
+position_smoothing_enabled = true
+position_smoothing_speed = 6.0

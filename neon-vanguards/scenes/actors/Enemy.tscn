@@ -1,0 +1,43 @@
+[gd_scene load_steps=5 format=3 uid="uid://enemy0000001"]
+
+[ext_resource type="Script" path="res://scripts/Enemy.gd" id="1_enemyscript"]
+[ext_resource type="Texture2D" uid="uid://soldiere001" path="res://assets/art/soldier_enemy.svg" id="2_enemysprite"]
+[ext_resource type="Texture2D" uid="uid://gunrif00001" path="res://assets/art/gun_rifle.svg" id="3_gunsprite"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1"]
+radius = 18.0
+height = 54.0
+
+[node name="Enemy" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 1
+script = ExtResource("1_enemyscript")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -4)
+shape = SubResource("CapsuleShape2D_1")
+
+[node name="BodySprite" type="Sprite2D" parent="."]
+position = Vector2(0, -4)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_enemysprite")
+
+[node name="Gun" type="Node2D" parent="."]
+position = Vector2(0, -2)
+
+[node name="GunSprite" type="Sprite2D" parent="Gun"]
+position = Vector2(22, 2)
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("3_gunsprite")
+
+[node name="Muzzle" type="Marker2D" parent="Gun"]
+position = Vector2(44, 2)
+
+[node name="HPBar" type="ProgressBar" parent="."]
+offset_left = -24.0
+offset_top = -42.0
+offset_right = 24.0
+offset_bottom = -34.0
+max_value = 50.0
+value = 50.0
+show_percentage = false

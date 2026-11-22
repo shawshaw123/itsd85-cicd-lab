@@ -1,0 +1,35 @@
+<svg width="1280" height="720" viewBox="0 0 1280 720" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="sunsetGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#7c2d12"/>
+      <stop offset="35%" stop-color="#c2410c"/>
+      <stop offset="65%" stop-color="#f97316"/>
+      <stop offset="90%" stop-color="#fef08a"/>
+      <stop offset="100%" stop-color="#fb923c"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Golden Sunset Sky -->
+  <rect width="1280" height="720" fill="url(#sunsetGrad)"/>
+
+  <!-- Giant Blazing Sun -->
+  <circle cx="640" cy="460" r="140" fill="#fef08a" opacity="0.6"/>
+  <circle cx="640" cy="460" r="100" fill="#fffbeb"/>
+
+  <!-- Ancient Citadel / Cyber Pyramids Silhouettes -->
+  <polygon points="120,560 300,320 480,560" fill="#78350f" opacity="0.7"/>
+  <polygon points="800,560 980,340 1160,560" fill="#78350f" opacity="0.7"/>
+
+  <!-- Golden Sand Dunes Layer 1 -->
+  <path d="M 0 520 Q 280 440 600 520 Q 920 460 1280 500 L 1280 720 L 0 720 Z" fill="#9a3412" opacity="0.85"/>
+
+  <!-- Ancient Sandstone Monoliths & Pillars -->
+  <rect x="180" y="380" width="28" height="180" fill="#78350f" rx="3"/>
+  <rect x="260" y="420" width="24" height="140" fill="#78350f" rx="3"/>
+  <rect x="1000" y="380" width="28" height="180" fill="#78350f" rx="3"/>
+  <rect x="1080" y="410" width="24" height="150" fill="#78350f" rx="3"/>
+
+  <!-- Foreground Dunes -->
+  <path d="M 0 580 Q 340 510 700 580 Q 1020 520 1280 570 L 1280 720 L 0 720 Z" fill="#451a03"/>
+</svg>
+

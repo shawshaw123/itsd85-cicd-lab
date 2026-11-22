@@ -1,0 +1,34 @@
+<svg width="128" height="128" viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg">
+  <!-- Ion Jetpack -->
+  <rect x="22" y="44" width="22" height="42" rx="8" fill="#581c87" stroke="#3b0764" stroke-width="3"/>
+  <rect x="26" y="78" width="14" height="16" rx="4" fill="#a855f7"/>
+  <ellipse cx="33" cy="98" rx="8" ry="12" fill="#06b6d4" opacity="0.95"/>
+  <ellipse cx="33" cy="95" rx="5" ry="7" fill="#e0f2fe"/>
+
+  <!-- Cyber Armor (Purple & Cyan Accents) -->
+  <rect x="42" y="52" width="46" height="42" rx="14" fill="#6b21a8" stroke="#3b0764" stroke-width="3"/>
+  <rect x="48" y="58" width="34" height="20" rx="6" fill="#9333ea"/>
+  <!-- Glowing power core -->
+  <circle cx="65" cy="68" r="6" fill="#06b6d4" stroke="#cffafe" stroke-width="2"/>
+
+  <!-- High-Tech Cyber Helmet -->
+  <circle cx="68" cy="38" r="28" fill="#3b0764" stroke="#1e1b4b" stroke-width="3"/>
+  <!-- Dual Antennae -->
+  <line x1="44" y1="24" x2="38" y2="10" stroke="#06b6d4" stroke-width="3" stroke-linecap="round"/>
+  <circle cx="38" cy="10" r="3" fill="#67e8f9"/>
+  <line x1="90" y1="24" x2="96" y2="10" stroke="#06b6d4" stroke-width="3" stroke-linecap="round"/>
+  <circle cx="96" cy="10" r="3" fill="#67e8f9"/>
+
+  <!-- Cyan Full-Face Cyber Visor -->
+  <path d="M 46 32 C 46 26, 88 26, 88 32 C 88 44, 46 44, 46 32 Z" fill="#06b6d4" stroke="#0891b2" stroke-width="2"/>
+  <polygon points="54,34 80,34 76,38 58,38" fill="#ffffff" fill-opacity="0.8"/>
+  <!-- Digital smile / comm grid -->
+  <line x1="60" y1="52" x2="74" y2="52" stroke="#a855f7" stroke-width="2.5" stroke-linecap="round"/>
+
+  <!-- Cyber Boots -->
+  <rect x="46" y="94" width="16" height="20" rx="6" fill="#3b0764"/>
+  <rect x="68" y="94" width="16" height="20" rx="6" fill="#3b0764"/>
+  <ellipse cx="54" cy="114" rx="10" ry="6" fill="#06b6d4"/>
+  <ellipse cx="76" cy="114" rx="10" ry="6" fill="#06b6d4"/>
+</svg>
+

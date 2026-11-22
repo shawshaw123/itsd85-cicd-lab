@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://platdese0001"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1"]
+size = Vector2(240, 24)
+
+[node name="PlatformDesert" type="StaticBody2D"]
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_1")
+
+[node name="Base" type="ColorRect" parent="."]
+offset_left = -120.0
+offset_top = -12.0
+offset_right = 120.0
+offset_bottom = 12.0
+color = Color(0.3, 0.16, 0.08, 1)
+
+[node name="Sandstone" type="ColorRect" parent="."]
+offset_left = -116.0
+offset_top = -8.0
+offset_right = 116.0
+offset_bottom = 8.0
+color = Color(0.48, 0.28, 0.14, 1)
+
+[node name="GoldTrim" type="ColorRect" parent="."]
+offset_left = -120.0
+offset_top = -12.0
+offset_right = 120.0
+offset_bottom = -9.0
+color = Color(1.0, 0.78, 0.25, 1)
+

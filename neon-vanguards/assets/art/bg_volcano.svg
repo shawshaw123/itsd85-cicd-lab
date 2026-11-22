@@ -1,0 +1,40 @@
+<svg width="1280" height="720" viewBox="0 0 1280 720" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="cavernGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#180c0a"/>
+      <stop offset="50%" stop-color="#2d130d"/>
+      <stop offset="85%" stop-color="#451208"/>
+      <stop offset="100%" stop-color="#7c2d12"/>
+    </linearGradient>
+    <linearGradient id="lavaGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#fef08a"/>
+      <stop offset="30%" stop-color="#f97316"/>
+      <stop offset="100%" stop-color="#dc2626"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Cavern Background -->
+  <rect width="1280" height="720" fill="url(#cavernGrad)"/>
+
+  <!-- Jagged Ceiling Stalactites -->
+  <polygon points="0,0 60,140 110,0 180,90 240,0 350,160 420,0 540,110 610,0 720,180 810,0 930,130 1020,0 1140,170 1210,0 1280,120 1280,0" fill="#1c0a06"/>
+  <polygon points="120,0 160,80 200,0 460,0 500,100 550,0 840,0 880,90 920,0" fill="#2d130d" opacity="0.6"/>
+
+  <!-- Glowing Magma Veins in the Wall -->
+  <path d="M 80 180 Q 140 260 110 360 Q 90 460 160 560" stroke="#f97316" stroke-width="4" fill="none" opacity="0.7"/>
+  <path d="M 640 140 Q 610 240 670 340 Q 720 440 680 560" stroke="#f97316" stroke-width="5" fill="none" opacity="0.8"/>
+  <path d="M 1120 160 Q 1180 280 1150 400 Q 1110 500 1180 600" stroke="#f97316" stroke-width="4" fill="none" opacity="0.7"/>
+
+  <!-- Distant Molten Lava Glow -->
+  <rect y="640" width="1280" height="80" fill="url(#lavaGrad)"/>
+  
+  <!-- Lava Bubbles -->
+  <circle cx="220" cy="655" r="14" fill="#fef08a" opacity="0.85"/>
+  <circle cx="580" cy="650" r="18" fill="#fef08a" opacity="0.9"/>
+  <circle cx="880" cy="658" r="12" fill="#fef08a" opacity="0.8"/>
+  <circle cx="1090" cy="652" r="16" fill="#fef08a" opacity="0.9"/>
+
+  <!-- Lava Rising Heat Wave Haze -->
+  <rect y="600" width="1280" height="50" fill="#ea580c" opacity="0.3"/>
+</svg>
+

@@ -1,0 +1,99 @@
+[gd_scene load_steps=8 format=3 uid="uid://lvl040000001"]
+
+[ext_resource type="Script" path="res://scripts/Level.gd" id="1_levelscript"]
+[ext_resource type="Texture2D" uid="uid://bgspace00001" path="res://assets/art/bg_space.svg" id="2_bg"]
+[ext_resource type="PackedScene" path="res://scenes/ui/HUD.tscn" id="3_hud"]
+[ext_resource type="PackedScene" path="res://scenes/actors/Player.tscn" id="4_player"]
+[ext_resource type="PackedScene" path="res://scenes/actors/Enemy.tscn" id="5_enemy"]
+[ext_resource type="PackedScene" path="res://scenes/actors/PlatformSpace.tscn" id="6_plat"]
+[ext_resource type="PackedScene" path="res://scenes/actors/HealthPickup.tscn" id="7_hp"]
+
+[node name="Level04" type="Node2D"]
+script = ExtResource("1_levelscript")
+level_number = 4
+goal_text = "MAP 4 - ORBITAL STATION: Eliminate 3 Combat Drones"
+time_limit = 45.0
+target_score = 3
+
+[node name="Background" type="TextureRect" parent="."]
+offset_right = 1280.0
+offset_bottom = 720.0
+texture = ExtResource("2_bg")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="SpaceDust" type="CPUParticles2D" parent="."]
+position = Vector2(640, 360)
+amount = 40
+lifetime = 6.0
+emission_shape = 3
+emission_rect_extents = Vector2(640, 360)
+direction = Vector2(-1, 0)
+spread = 45.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 10.0
+initial_velocity_max = 30.0
+scale_amount_min = 1.5
+scale_amount_max = 3.5
+color = Color(0.8, 0.9, 1.0, 0.7)
+
+[node name="Bounds" type="StaticBody2D" parent="."]
+
+[node name="Floor" type="CollisionPolygon2D" parent="Bounds"]
+polygon = PackedVector2Array(0, 670, 1280, 670, 1280, 720, 0, 720)
+
+[node name="FloorVisual" type="ColorRect" parent="Bounds"]
+offset_top = 670.0
+offset_right = 1280.0
+offset_bottom = 720.0
+color = Color(0.08, 0.12, 0.18, 1)
+
+[node name="SolarCyanRim" type="ColorRect" parent="Bounds"]
+offset_top = 667.0
+offset_right = 1280.0
+offset_bottom = 672.0
+color = Color(0.2, 0.85, 1.0, 1)
+
+[node name="Ceiling" type="CollisionPolygon2D" parent="Bounds"]
+polygon = PackedVector2Array(0, 0, 1280, 0, 1280, 20, 0, 20)
+
+[node name="LeftWall" type="CollisionPolygon2D" parent="Bounds"]
+polygon = PackedVector2Array(0, 0, 20, 0, 20, 720, 0, 720)
+
+[node name="RightWall" type="CollisionPolygon2D" parent="Bounds"]
+polygon = PackedVector2Array(1260, 0, 1280, 0, 1280, 720, 1260, 720)
+
+[node name="Platform1" parent="." instance=ExtResource("6_plat")]
+position = Vector2(250, 480)
+
+[node name="Platform2" parent="." instance=ExtResource("6_plat")]
+position = Vector2(1030, 480)
+
+[node name="Platform3" parent="." instance=ExtResource("6_plat")]
+position = Vector2(640, 350)
+
+[node name="Platform4" parent="." instance=ExtResource("6_plat")]
+position = Vector2(250, 210)
+
+[node name="Platform5" parent="." instance=ExtResource("6_plat")]
+position = Vector2(1030, 210)
+
+[node name="HealthPickup1" parent="." instance=ExtResource("7_hp")]
+position = Vector2(250, 440)
+
+[node name="HealthPickup2" parent="." instance=ExtResource("7_hp")]
+position = Vector2(1030, 440)
+
+[node name="Player" parent="." groups=["player"] instance=ExtResource("4_player")]
+position = Vector2(640, 580)
+
+[node name="Enemy1" parent="." instance=ExtResource("5_enemy")]
+position = Vector2(250, 150)
+
+[node name="Enemy2" parent="." instance=ExtResource("5_enemy")]
+position = Vector2(1030, 150)
+
+[node name="Enemy3" parent="." instance=ExtResource("5_enemy")]
+position = Vector2(640, 270)
+
+[node name="HUD" parent="." instance=ExtResource("3_hud")]

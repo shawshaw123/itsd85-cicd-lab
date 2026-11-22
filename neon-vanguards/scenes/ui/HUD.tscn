@@ -1,0 +1,199 @@
+[gd_scene load_steps=6 format=3 uid="uid://hud000000001"]
+
+[ext_resource type="Script" path="res://scripts/HUD.gd" id="1_hudscript"]
+[ext_resource type="Script" path="res://scripts/VirtualJoystick.gd" id="2_vjoy"]
+[ext_resource type="PackedScene" path="res://scenes/ui/PauseMenu.tscn" id="3_pause"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hp"]
+bg_color = Color(0.2, 0.8, 0.35, 0.9)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fuel"]
+bg_color = Color(0.15, 0.75, 1.0, 0.9)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[node name="HUD" type="CanvasLayer"]
+script = ExtResource("1_hudscript")
+
+[node name="TopBar" type="HBoxContainer" parent="."]
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 30.0
+offset_top = 20.0
+offset_right = -30.0
+offset_bottom = 70.0
+grow_horizontal = 2
+theme_override_constants/separation = 20
+
+[node name="GoalLabel" type="Label" parent="TopBar"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 22
+text = "Goal: Eliminate Target"
+vertical_alignment = 1
+
+[node name="ScoreLabel" type="Label" parent="TopBar"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+text = "Score: 0/1"
+vertical_alignment = 1
+
+[node name="TimerLabel" type="Label" parent="TopBar"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "60s"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PauseButton" type="Button" parent="TopBar"]
+custom_minimum_size = Vector2(90, 44)
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "PAUSE"
+
+[node name="BannerLabel" type="Label" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -350.0
+offset_top = 80.0
+offset_right = 350.0
+offset_bottom = 125.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 22
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PlayerStats" type="VBoxContainer" parent="."]
+layout_mode = 1
+offset_left = 30.0
+offset_top = 75.0
+offset_right = 240.0
+offset_bottom = 180.0
+theme_override_constants/separation = 6
+
+[node name="HealthBar" type="ProgressBar" parent="PlayerStats"]
+custom_minimum_size = Vector2(0, 22)
+layout_mode = 2
+theme_override_styles/fill = SubResource("StyleBoxFlat_hp")
+value = 100.0
+show_percentage = false
+
+[node name="HealthLabel" type="Label" parent="PlayerStats/HealthBar"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 12
+text = "HEALTH"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="FuelBar" type="ProgressBar" parent="PlayerStats"]
+custom_minimum_size = Vector2(0, 18)
+layout_mode = 2
+theme_override_styles/fill = SubResource("StyleBoxFlat_fuel")
+value = 100.0
+show_percentage = false
+
+[node name="FuelLabel" type="Label" parent="PlayerStats/FuelBar"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 11
+text = "JETPACK"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AmmoButton" type="Button" parent="PlayerStats"]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+text = "AMMO: 30 / 30 (RELOAD)"
+
+[node name="Controls" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="MoveJoystick" type="Control" parent="Controls"]
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 40.0
+offset_top = -240.0
+offset_right = 240.0
+offset_bottom = -40.0
+grow_vertical = 0
+script = ExtResource("2_vjoy")
+
+[node name="MoveLabel" type="Label" parent="Controls/MoveJoystick"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -80.0
+offset_top = -20.0
+offset_right = 80.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.6, 0.8, 1, 0.7)
+theme_override_font_sizes/font_size = 13
+text = "MOVE / FLY"
+horizontal_alignment = 1
+
+[node name="AimJoystick" type="Control" parent="Controls"]
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -240.0
+offset_top = -240.0
+offset_right = -40.0
+offset_bottom = -40.0
+grow_horizontal = 0
+grow_vertical = 0
+script = ExtResource("2_vjoy")
+
+[node name="AimLabel" type="Label" parent="Controls/AimJoystick"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -80.0
+offset_top = -20.0
+offset_right = 80.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.6, 0.8, 1, 0.7)
+theme_override_font_sizes/font_size = 13
+text = "AIM & SHOOT"
+horizontal_alignment = 1
+
+[node name="PauseMenu" parent="." instance=ExtResource("3_pause")]
+visible = false

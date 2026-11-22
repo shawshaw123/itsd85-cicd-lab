@@ -1,0 +1,28 @@
+<svg width="1280" height="720" viewBox="0 0 1280 720" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="skyGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="60%" stop-color="#bae6fd"/>
+      <stop offset="100%" stop-color="#f0fdf4"/>
+    </linearGradient>
+  </defs>
+  <!-- Sky -->
+  <rect width="1280" height="720" fill="url(#skyGrad)"/>
+  
+  <!-- Distant Mountains -->
+  <polygon points="0,480 180,320 380,440 580,290 840,460 1060,310 1280,420 1280,720 0,720" fill="#86efac" opacity="0.45"/>
+  <polygon points="0,520 240,380 460,490 720,360 980,480 1280,390 1280,720 0,720" fill="#4ade80" opacity="0.6"/>
+
+  <!-- Jungle Tree Silhouettes -->
+  <path d="M 0 540 Q 60 480 120 540 Q 180 460 260 550 Q 340 440 420 540 Q 520 450 620 540 Q 720 460 820 550 Q 920 440 1020 540 Q 1140 460 1280 540 L 1280 720 L 0 720 Z" fill="#15803d" opacity="0.85"/>
+  
+  <!-- Foreground Jungle Foliage -->
+  <path d="M 0 590 Q 80 520 160 590 Q 240 510 340 600 Q 440 510 540 600 Q 660 500 780 600 Q 900 510 1020 600 Q 1160 510 1280 600 L 1280 720 L 0 720 Z" fill="#166534"/>
+
+  <!-- Military Watchtower silhouette on hill -->
+  <rect x="880" y="420" width="8" height="120" fill="#14532d"/>
+  <rect x="940" y="420" width="8" height="120" fill="#14532d"/>
+  <rect x="860" y="410" width="108" height="18" fill="#14532d" rx="4"/>
+  <polygon points="860,410 914,370 968,410" fill="#14532d"/>
+</svg>
+
