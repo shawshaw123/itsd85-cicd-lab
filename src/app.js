@@ -102,7 +102,7 @@ app.get("/", (req, res) => {
   <div class="container">
     <header class="card hero">
       <p class="badge">ITSD 85 CI/CD Lab · Deployed version: ${version}</p>
-      <h1>MARK P. IMPORTANTE</h1>
+      <h1>ANDRE LOUIE DULAY</h1>
       <p class="subtitle">Software Development Student · Web &amp; DevOps Enthusiast</p>
       <div class="nav">
         <a href="#projects">Projects</a>
