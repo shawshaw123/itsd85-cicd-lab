@@ -1,6 +1,6 @@
 # ITSD 85 Lab <no>: Automated CI/CD Pipeline
 
-Student(s): <full names> Section: <section> Instructor: <name>
+Student(s): Mark P. Importante | Section: BSIT 4Cx | Instructor: Rinante Buntod
 
 ## What this project does
 
@@ -31,19 +31,20 @@ Open `http://localhost:3000` and `http://localhost:3000/health`.
 
 | Test | Expected result | Actual result | Push-to-live time (min:sec) | Screenshot no. |
 | --- | --- | --- | --- | --- |
-| A – good change | test ✓, deploy ✓, new name and commit ID live | | | |
-| B – broken change | test ✗, merge blocked, server unchanged | | n/a | |
+| A – good change | test ✓, deploy ✓, new name and commit ID live | test ✓ (12s on PR), deploy ✓ (`MARK P. IMPORTANTE` & `7652c103...` live) | | `Screenshot 2026-11-22 124633.png`, `125103.png` |
+| B – broken change | test ✗, merge blocked, server unchanged | test ✗ (1 failing check on `eb93b27`), merge blocked | n/a | `Screenshot 2026-11-22 125202.png` |
 | C – rollback (Method 1) | old content and a new commit ID live | | | |
 | C – rollback (Method 2) | previous commit ID live within seconds | | | |
 
 ## Screenshots
 
-- [Checkpoint 1](docs/screenshots/cp1-versions.png)
-- [Checkpoint 2](docs/screenshots/cp2-tests-dev.png)
-- [Checkpoint 3](docs/screenshots/cp3-github-repo.png)
-- [Checkpoint 4](docs/screenshots/cp4-ci-green.png)
-- [Checkpoint 5](docs/screenshots/cp5-vm-manual.png)
-- [Checkpoint 6](docs/screenshots/cp6-deploy-green.png)
+- [Manual Dry Run Build (Kali)](docs/screenshots/Screenshot%202026-11-22%20121339.png)
+- [Checkpoint 5 – Manual Deploy Live](docs/screenshots/Screenshot%202026-11-22%20121628.png)
+- [Runner Service Active (Kali)](docs/screenshots/Screenshot%202026-11-22%20122636.png)
+- [Checkpoint 6a – Runner Labels & Idle](docs/screenshots/Screenshot%202026-11-22%20122807.png)
+- [Test A – PR Checks Passed & Deploy Skipped](docs/screenshots/Screenshot%202026-11-22%20124633.png)
+- [Test A – Personalized Portfolio Live](docs/screenshots/Screenshot%202026-11-22%20125103.png)
+- [Test B – Broken Change Blocked](docs/screenshots/Screenshot%202026-11-22%20125202.png)
 
 ## Paper
 
